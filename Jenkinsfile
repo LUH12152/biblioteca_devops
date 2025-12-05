@@ -11,7 +11,19 @@ pipeline{
     stage('Show message'){
         steps{
           bat 'echo "Primer stage del pipeline"'
+          bat 'echo "A continuacion hacemos el checkout del proyecto"'
           }
+    }
+       stage('Checkout proyecto'){
+            steps{
+                git branch: 'master',
+                    url: 'https://github.com/LUH12152/biblioteca_devops.git'
+               }
+            }
+       stage('Maven Clean'){
+            steps{
+            bat 'mvn clean'
+            }
        }
     }
 }
