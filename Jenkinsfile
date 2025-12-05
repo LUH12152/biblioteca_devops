@@ -33,5 +33,6 @@ pipeline{
         steps{
         bat 'mkdir v%VERSION_BACK%'
         }
+       }
     }
 }
